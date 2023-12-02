@@ -8,7 +8,6 @@ const findLimits = (data) => {
         const limits = { blue: 0, red: 0, green: 0 }
         const { gameParsed } = game
 
-        // for loops to easily exit once a game is found to be impossible
         for (const i in gameParsed) {
             const set = gameParsed[i]
             for (const y in set) {
@@ -17,12 +16,12 @@ const findLimits = (data) => {
                 const colorValue = color[1]
 
                 if (colorValue > limits[colorName]) {
-                    // First time its found impossible we can go to the next game
+                    // if number of blocks is greater than the current limit, set it to the limit
                     limits[colorName] = colorValue
                 }
             }
         }
-        // if we never found one that's impossible we can add it to the total
+
         total += limits.blue * limits.green * limits.red
     })
     return total
