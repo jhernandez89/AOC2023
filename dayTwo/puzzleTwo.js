@@ -5,7 +5,7 @@ const { parseData } = require('./common.js')
 const findLimits = (data) => {
   let total = 0
   data.forEach(game => {
-    const limits = { blue: 0, red: 0, green: 0 }
+    const limits = { blue: 1, red: 1, green: 1 }
     const { gameParsed } = game
 
     for (const i in gameParsed) {
